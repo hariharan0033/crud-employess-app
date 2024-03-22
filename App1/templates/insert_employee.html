@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="submit"],input[type="reset"]{
+            background-color: brown;
+            color: white;
+            height: 2rem;
+            width: 7rem;
+            margin: 1rem;
+            border-radius: 5px;
+            cursor:pointer;
+        }
+        h1{
+            color: brown;
+        }
+        input{
+            background-color: papayawhip;
+        }
+        body{
+            background-color: papayawhip;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Add new Employee</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="SAVE">
+        <input type="reset" value="CLEAR ALL">
+    </form>  
+    </div>
+    
+</body>
+</html>
