@@ -21,5 +21,6 @@ from App1 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.employee,name='listemp'),
-    path('insert/',views.insert_employee,name='insert')
+    path('insert/',views.insert_employee,name='insert'),
+    path('delete/<int:i>',views.delete_employee,name='deleteemp')
 ]

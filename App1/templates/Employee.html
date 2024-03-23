@@ -45,8 +45,8 @@
         <td>{{employee.empname}}</td>
         <td>{{employee.dept}}</td>
         <td>{{employee.salary}}</td>
-        <td><a href=""><img src="{% static 'images/pencil-square.svg'%}" alt=""></a></td>
-        <td><a href=""><img src="{% static 'images/trash3-fill.svg'%}" alt=""></a></td>
+        <td><a href="edit/{{employee.id}}"><img src="{% static 'images/pencil-square.svg'%}" alt=""></a></td>
+        <td><a href="delete/{{employee.id}}"><img src="{% static 'images/trash3-fill.svg'%}" alt=""></a></td>
         </tr>
         {% endfor %}
     </table>

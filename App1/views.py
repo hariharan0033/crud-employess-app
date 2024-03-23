@@ -15,3 +15,10 @@ def insert_employee(request):
             return redirect('listemp')
         
     return render(request,'insert_employee.html',{'form':form})
+
+def delete_employee(request,i):
+    if request.method == 'POST':    
+        emp=Employee.objects.get(id=i)
+        emp.delete()
+        return redirect('listemp')
+    return render(request,'delete.html')

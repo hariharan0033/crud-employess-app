@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Employee</title>
+    <style>
+        body{
+            width: 100vw;
+            height:100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            border: 1px solid black;
+            border-radius: 1rem;
+            width: 22rem;
+            height: 12rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card-header{
+            border-bottom: 1px solid black;
+            text-align: center;
+            width: 100%;
+        }
+        .card-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around; 
+            height: 100%;
+        }
+        h2{
+            margin:.5rem;
+        }
+        .btn-con{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        input[type="submit"],a{
+            width:6rem;
+            height: 2.5rem;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: .5rem;
+        }
+        input[type="submit"]{
+            background-color: red;
+        }
+        a{
+            background-color: rgb(23, 179, 23);
+            text-decoration: none;
+            display: grid;
+            place-content:  center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2 class="card-header">Delete Confirmation</h2>
+        <div class="card-body">
+            <h4>Are you Sure!, Do you Want to Delete?</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="btn-con">
+                    <input type="submit" value="Delete">
+                <a href="{%url 'listemp' %}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
