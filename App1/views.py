@@ -14,7 +14,7 @@ def insert_employee(request):
             form.save()
             return redirect('listemp')
         
-    return render(request,'employee_form.html',{'form':form})
+    return render(request,'employee_form.html',{'form':form,'action':"Add"})
 
 def delete_employee(request,i):
     if request.method == 'POST':    
@@ -31,4 +31,4 @@ def update_employee(request,i):
         if form.is_valid():
             form.save()
             return redirect('listemp')
-    return render(request,'employee_form.html',{'form':form})
+    return render(request,'employee_form.html',{'form':form,'action':"Update"})

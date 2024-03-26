@@ -6,9 +6,16 @@
     <title>Insert</title>
     <style>
         .container{
+            margin: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
+            border: brown 2px solid;
+            border-radius: 2rem;
+            width: 30%;
+            height: 80%;
+            background-color: papayawhip;
+            
         }
         input[type="submit"],input[type="reset"]{
             background-color: brown;
@@ -18,28 +25,59 @@
             margin: 1rem;
             border-radius: 5px;
             cursor:pointer;
+            font-weight: bold;
         }
         h1{
             color: brown;
+            border-bottom: brown 2px solid;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 1rem;
+            
         }
         input{
-            background-color: papayawhip;
+            background-color: whitesmoke;
         }
         body{
-            background-color: papayawhip;
+            background-color: hsla(37, 100%, 92%, 0.664);
+            margin: 2rem;
         }
+        form p {
+            margin: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        form p label{
+            font-size: 1.5rem;
+        }
+
+        form p input{
+            height: 1.5rem;
+            border-radius: .75em;
+            border: brown 2px solid;
+        }
+        .btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        
         
     </style>
 </head>
 <body>
     <div class="container">
-    <h1>Add new Employee</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="SAVE">
-        <input type="reset" value="CLEAR ALL">
-    </form>  
+    <h1>{{action}} Employee</h1>
+    <div class="form">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="btn">
+                <input type="submit" value="SAVE">
+            <input type="reset" value="CLEAR ALL">
+            </div>
+        </form>
+    </div>  
     </div>
     
 </body>
