@@ -14,7 +14,7 @@ def insert_employee(request):
             form.save()
             return redirect('listemp')
         
-    return render(request,'insert_employee.html',{'form':form})
+    return render(request,'employee_form.html',{'form':form})
 
 def delete_employee(request,i):
     if request.method == 'POST':    
@@ -22,3 +22,13 @@ def delete_employee(request,i):
         emp.delete()
         return redirect('listemp')
     return render(request,'delete.html')
+
+def update_employee(request,i):
+    emp = Employee.objects.get(id=i)
+    form = EmployeeForm(instance=emp)       #blankform 
+    if request.method=='POST':
+        form = EmployeeForm(request.POST,instance=emp)
+        if form.is_valid():
+            form.save()
+            return redirect('listemp')
+    return render(request,'employee_form.html',{'form':form})
