@@ -23,5 +23,6 @@ urlpatterns = [
     path('',views.employee,name='listemp'),
     path('insert/',views.insert_employee,name='insert'),
     path('delete/<int:i>',views.delete_employee,name='deleteemp'),
-    path('edit/<int:i>',views.update_employee,name='updateemp')
+    path('edit/<int:i>',views.update_employee,name='updateemp'),
+    path('register/',views.registerPage,name="register"),
 ]

@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Employee
 from .forms import EmployeeForm
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 def employee(request):
     emp=Employee.objects.all()
@@ -32,3 +33,12 @@ def update_employee(request,i):
             form.save()
             return redirect('listemp')
     return render(request,'employee_form.html',{'form':form,'action':"Update"})
+
+def registerPage(request):
+    form = UserCreationForm
+    if  request.method=="POST":
+        form =UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('listemp')
+    return render(request,'register.html',{"form":form})
