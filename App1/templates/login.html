@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'style/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            <form action="" method="post">
+                {%csrf_token%}
+                <p>User Name</p>
+                <p><input type="text" name="uname"></p>
+                <p>Password</p>
+                <p><input type="password" name="pwd"></p>
+                <input type="submit" value="Login">
+            </form>
+            <p>Don't you have an Account?
+                <a href="{% url 'register' %}">Signup Now!</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
